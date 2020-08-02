@@ -1,24 +1,9 @@
-import React, { useState } from  'react';
+import React from  'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 import Home from './components/Container/Home'
 import { Card } from 'antd';
 
 function App() {
-  const [Patients,setPatients]= useState([
-    {
-        Name:"Ahmed",
-        Gender:"Male",
-        Age:28
-    },{
-        Name:"Sarah",
-        Gender:"Female",
-        Age:22
-    },{
-        Name:"Kamal",
-        Gender:"Male",
-        Age:31
-    }
-  ]);
   return (
     <BrowserRouter>
     <div>
