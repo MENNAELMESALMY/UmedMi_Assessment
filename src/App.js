@@ -11,7 +11,7 @@ function App() {
     title="UmedMi Patients"
     className="CardTiltle" 
     headStyle={{color: '#41085c',fontSize:28+'px',fontWeight:700 ,boxShadow: '0 3px 6px rgba(79,43,121,.37)'}}>
-    <Route exact path='/' component={(props) => <Home  {...props} Patients={Patients}/>}/> 
+    <Route exact path='/' component={Home}/> 
    </Card>
     </div>
     </BrowserRouter>
