@@ -5,7 +5,8 @@ import "../../style.css"
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 
-function Home() {
+function Home(props) {
+
   const Patients = useSelector((state) => state.Patients);
 
   const dispatch = useDispatch();
@@ -15,16 +16,12 @@ function Home() {
   const [patient, setPatient] = useState({ Name: "" , Age:"",Gender:"",_id:1});
     //save edit data
   const handleChange = (e) => {
-    console.log("tt",e.target)  
     setPatient({...patient
           ,[e.target.id]: e.target.value
         });
-
-        console.log(patient);
      }
   //edit patient modal function
   const showModal = (id) => {
-     console.log("iddd",id)
     setPatient({...patient
         ,_id: id
       });
@@ -34,11 +31,6 @@ function Home() {
   const handleOk = () => {
     if(patient.Age=="" || patient.name=="" || patient.Gender=="" || Number(patient.Age) < 0)
     {
-
-        console.log("now",patient.Age=="");
-        console.log("now", patient.name=="");
-        console.log("now",patient.Gender=="" );
-        console.log("now",Number(patient.Age) < 0);
     Modal.error({
         title: 'This is an error message',
         content: 'Sorry,you need to enter all fields with valid data to update a patient',
@@ -59,7 +51,6 @@ function Home() {
 
   //delete patient function
   const deletePatient = (id) => {
-      console.log("correct id",id)
     message.success("The Patient is successfully deleted");
     dispatch({ type: "DELETE_Patient", _id: id });
   };
@@ -155,6 +146,7 @@ function Home() {
               borderRadius: 15 + "px",
               color:"white"
             }}
+            onClick={()=>{props.history.push('/AddPatient')}}
           >
             Add a New Patient
           </Button>

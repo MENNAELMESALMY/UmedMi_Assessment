@@ -22,7 +22,6 @@ const initState = {
 const rootReducer = (state = initState,action)=>{
   
     if(action.type === 'ADD_Patient'){
-        action.newPatient._id=Date.now();
         let newPatients = [...state.Patients];
         newPatients.push(action.newPatient);
         return{
