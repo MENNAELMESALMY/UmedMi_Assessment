@@ -1,13 +1,43 @@
-.ant-card{
-    .ant-card-body{
-        div{
-            .ant-row{
-                .ant-col{
-                    h1{
-                        color: red;
-                    }
-                }
-            }
-        }
-    }
+@purple: #551872;
+@purpleHover: #702991;
+.customInput{
+    width: 100%;
+    margin: 7px 0;
+    border: none;
+    color: #bfbfbf;
+    padding: .625rem;
+    border:#bfbfbf solid 1px;
+    border-radius: .375rem;
+    height: 40px;
+    transition: linear 1s;
 }
+
+.customInput:hover{
+    border-color: @purple;
+}
+//modal styling
+.customRadio{
+    margin:5px;
+}
+
+.ant-modal-title{
+    color: @purple;
+}
+.ant-btn:nth-child(1){
+    background-color: white;
+    border:#bfbfbf solid 1px;
+    color: @purple;
+}
+.ant-btn:nth-child(1):hover{
+    border-color: @purple;
+}
+
+.ant-btn:nth-child(2){
+    background-color: @purple;
+    border-color: @purple;
+}
+.ant-btn:nth-child(2):hover{
+    background-color: @purpleHover;
+    border-color: @purpleHover;
+}
+

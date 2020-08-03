@@ -20,17 +20,20 @@ const initState = {
 }
 
 const rootReducer = (state = initState,action)=>{
+  
     if(action.type === 'ADD_Patient'){
-        let newPatients = [...this.state.Patients];
+        action.newPatient._id=Date.now();
+        let newPatients = [...state.Patients];
         newPatients.push(action.newPatient);
         return{
             Patients: newPatients
         }
     }
     else if(action.type === 'EDIT_Patient'){
-        const patientId = this.state.Patients.findIndex(patient => patient._id == action.action._id );
-        let newPatients = [...this.state.Patients];
-        newPatients[patientId]=action.patient;
+        var checkid =action.patient._id;
+        const patientId = state.Patients.findIndex(patient => patient._id == checkid);
+        let newPatients = [...state.Patients];
+        newPatients[patientId]= action.patient;
         return{
             Patients: newPatients
         }

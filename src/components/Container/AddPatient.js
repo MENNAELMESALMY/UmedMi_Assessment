@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col} from "antd";
 import "antd/dist/antd.css";
 import "../../style.less"
+//import "../../App.css"
 //import { useSelector, useDispatch } from "react-redux";
 
 function AddPatient() {
